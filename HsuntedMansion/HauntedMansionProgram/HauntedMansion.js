@@ -22,3 +22,12 @@ async function goSound1(){ //This makes it go to the first sound and play an amb
 	await roll(90, 100, 1.1);
 	await Sound.Mechanical.Ambulance.play(true);
 }
+
+async function goRedLight(){
+	await delay(0.5);
+	await roll(180, 50, 1.2);
+	await roll(220, 50, 1.5);
+	await roll(130, 50, 0.75);
+	await setMainLed({ r: 255, g: 0, b: 0 });
+
+}
