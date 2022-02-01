@@ -18,16 +18,16 @@ async function goBlueLight(){ //This function makes the bolt say start and makes
 }
 
 async function goSound1(){ //This makes it go to the first sound and play an ambulence sound.
-	setHeading(90);
+	await delay(0.5);
 	await roll(90, 100, 1.1);
 	await Sound.Mechanical.Ambulance.play(true);
 }
 
-async function goRedLight(){
+async function goRedLight(){ //This makes the bolt go to the red spot and turn the lights red.
 	await delay(0.5);
-	await roll(180, 50, 1.2);
-	await roll(220, 50, 1.5);
-	await roll(130, 50, 0.75);
+	await roll(180, 50, 1.5);
+	await roll(220, 50, 1.3);
+	await delay(0.5);
+	await roll(130, 50, 0.9);
 	await setMainLed({ r: 255, g: 0, b: 0 });
-
 }
