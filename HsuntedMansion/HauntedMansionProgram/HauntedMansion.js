@@ -10,7 +10,8 @@ async function startProgram(){
 	await goToBlueLight();
 	await goSound1();
 	await goRedLight();
-	await greenLight();
+	await goGreenLight();
+	await goSound3();
 }
 
 async function goToBlueLight(){
@@ -36,15 +37,23 @@ async function goRedLight(){
 	
 }
 
-async function greenLight(){
-	await roll(40, 50, 1.5);
+async function goGreenLight(){
+	await roll(40, 50, 1.7);
 	await Sound.Mechanical.Alarm.play(false);
 	await delay(0.5);
 	await roll(130, 50, 1.15);
 	await delay(0.5);
-	await roll(185, 50, .7);
+	await roll(185, 50, .6);
 	await delay(0.5);
-	await roll(95, 50, 1.4);
+	await roll(95, 50, 1.3);
 	await delay(0.5);
 	await setMainLed({ r: 0, g: 255, b: 0 });
+}
+
+async function goSound3(){
+	await roll(0, 50, 1.4);
+	await delay(0.5);
+	await roll(-45, 50, 1.1);
+	await Sound.Mechanical.Chainsaw.play(false);
+	await delay(.5);
 }
