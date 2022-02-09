@@ -1,6 +1,6 @@
 /*
-Programmer: Josiah Fuller
-Team Member: Spencer
+Programmer: Spencer Kohler
+Team Member: Josiah Fuller
 Date: 1.26.2022
 Program: We will be making a program to go through a haunted mansion
  filled with haunted sounds, spooky color changes, and other obstacles
@@ -37,14 +37,14 @@ async function goRedLight(){
 }
 
 async function greenLight(){
-	await roll(40, 50, 1.3);
+	await roll(40, 50, 1.5);
 	await Sound.Mechanical.Alarm.play(false);
 	await delay(0.5);
-	await roll(130, 50, 1);
+	await roll(130, 50, 1.15);
 	await delay(0.5);
-	await roll(185, 50, .9);
-	await roll(95, 50, .6);
+	await roll(185, 50, .7);
 	await delay(0.5);
-	await setMainLed({ r: 0, g: 255, b: 0 });	
-	
+	await roll(95, 50, 1.4);
+	await delay(0.5);
+	await setMainLed({ r: 0, g: 255, b: 0 });
 }
