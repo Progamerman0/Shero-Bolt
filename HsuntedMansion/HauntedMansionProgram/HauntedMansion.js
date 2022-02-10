@@ -32,19 +32,19 @@ async function goRedLight(){ //This gets to the red spot and makes the lights re
 	await roll(180, 50, 1.5);
 	await roll(220, 50, 1.3);
 	await delay(.5);
-	await roll(130, 50, .9);
+	await roll(130, 50, 1);
 	await setMainLed({ r: 255, g: 0, b: 0 });
 	await delay(0.5)
 	
 }
 
 async function goGreenLight(){ //This gets to the second light and makes a sound, them gets to the green spot and makes the lights green
-	await roll(40, 50, 1.7);
+	await roll(40, 50, 1.5);
 	await Sound.Mechanical.Alarm.play(false);
 	await delay(0.5);
 	await roll(130, 50, 1.15);
 	await delay(0.5);
-	await roll(185, 50, .6);
+	await roll(185, 50, 0.6);
 	await delay(0.5);
 	await roll(95, 50, 1.3);
 	await delay(0.5);
@@ -60,7 +60,7 @@ async function goSound3(){ //This gets to the third sound and plays a sound
 }
 
 async function finish(){ //This gets to the end and makes the light purple, then say that it survived.
-	await roll(0, 100, .75);
+	await roll(0, 100, 0.75);
 	await setMainLed({ r: 255, g: 0, b: 255});
 	await scrollMatrixText('Survived', {r: 0, g: 255, b: 0}, 30, true);
 }
